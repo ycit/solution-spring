@@ -1,0 +1,32 @@
+allprojects {
+    group 'com.ycit'
+    version '1.0-SNAPSHOT'
+
+    apply plugin: 'java'
+    apply plugin: 'war'
+
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+
+    ext {
+        springVersion = "5.0.2.RELEASE"
+        jacksonVersion = "2.9.2"
+        servletVersion = "3.1.0"
+    }
+
+    dependencies {
+        compile(
+                "org.springframework:spring-web:${springVersion}",
+                "org.springframework:spring-webmvc:${springVersion}",
+                "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}",
+        )
+        providedCompile(
+                "javax.servlet:javax.servlet-api:${servletVersion}"
+
+        )
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+    }
+}

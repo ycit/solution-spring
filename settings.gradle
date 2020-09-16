@@ -1,3 +1,5 @@
 rootProject.name = 'solution-spring'
 include 'programmatically'
+include 'lifecycle'
+include 'solution-springboot'
 
